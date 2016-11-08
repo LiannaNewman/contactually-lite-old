@@ -30,8 +30,11 @@ class ContactsController < ApplicationController
   def update
     @contact = Contact.find_by(id: params[:id])
     @contact.update(
-      name: params[:name],
-      email: params[:email]
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      email_address: params[:email_address],
+      phone_number: params[:phone_number],
+      company_name: params[:company_name]
     )
   end
 
