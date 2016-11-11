@@ -1,7 +1,6 @@
 class ContactsController < ApplicationController
   def index
-    @contacts = Contact.find_by(user_id)
-    @contacts.all
+    @contacts = Contact.all
   end
 
   def show

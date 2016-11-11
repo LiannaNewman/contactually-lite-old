@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :users
+
+  get '/contacts' => 'contacts#index'
+  get '/users' => 'users#index'
 
   namespace :api do
     namespace :v1 do
      resources :contacts
+     resources :users
      end
   end
   # You can have the root of your site routed with "root"

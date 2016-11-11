@@ -1,6 +1,5 @@
-json.contacts @contacts.each do |contact|
+json.array! @contacts.each do |contact|
   json.id contact.id
-  json.user_id contact.user_id
   json.first_name contact.first_name
   json.last_name contact.last_name
   json.email_address contact.email_address

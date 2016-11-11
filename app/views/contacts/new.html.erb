@@ -1,0 +1,13 @@
+<h1>Upload Your Contacts</h1>
+
+<p>Make sure your contacts are saved in a CSV file</p>
+
+<%= form_tag("/contacts/new", method: "post") do %>
+
+  <%= form_tag({action: :upload}, multipart: true) do %>
+    <%= file_field_tag 'contacts' %>
+  <% end %>
+
+  <%= submit_tag "Submit" %>
+
+<% end %>

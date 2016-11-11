@@ -1,0 +1,26 @@
+<head>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+
+  <div ng-app="app">
+    <div ng-controller="contactsCtrl" class="form-group">
+      <h3>{{message}}</h3>
+      <ul>
+        <li ng-repeat="errors in errors">{{error}}</li>
+      </ul>
+
+        <h1>Upload Your Contacts</h1>
+          <h5>Make sure your contacts are saved as a .tsv or .csv file</h5>
+
+              <input type="file" file-model="myFile"/>
+              <button class="btn btn-default" ng-click="addContacts()"> Confirm </button>
+
+      <datalist id="contacts">
+        <option ng-repeat="contact in contacts"> {{ contact.first_name }} </option>
+      </datalist>
+
+        <input type="text" ng-model="filterNumber" list="phone_numbers">
+        <div ng-repeat="contact in contacts | filter: {phone}"> </div>
+
+      </div>
+    </div>

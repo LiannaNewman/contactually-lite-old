@@ -3,7 +3,7 @@ module Api
     class ContactsController < ApplicationController
 
       def index
-        @contacts = Contact.find_by(user_id: params[:user_id])
+        @contacts = Contact.all
       end
 
       def update
